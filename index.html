@@ -10,19 +10,19 @@
   </head>
   <body>
     <main>
-      <div class="flex-row">
+      <div class="grid">
         <div class="flex-column">
           <div id="time"></div>
           <div><img src="static/stopwatch.png"> <span id="stopwatch">00:00.00</span></div>
-          <button><img src="static/start.png"></button>
         </div>
-        <div>
-          <!-- <div id="acceleration">Acceleration:</div> -->
-          <!-- <div id="gyro">Gyro:</div> -->
+        <div class="flex-column">
           <div>Speed <img src="static/speed.png"> <span id="speed">0</span> m/s</div>
+          <div>Body Temp <img src="static/temperature.png"> <span id="temperature">0.0</span> &deg;C</div>
+        </div>
+        <button><img src="static/start.png"></button>
+        <div class="flex-row">
           <div>Distance <img src="static/distance.png"> <span id="distance">0</span> m</div>
           <div>Calories <img src="static/calories.png"> <span id="calories">0</span></div>
-          <div>Body Temp <img src="static/temperature.png"> <span id="temperature">0.0</span> &deg;C</div>
         </div>
       </div>
       <!-- <div>1 gram of Uranium contains 18 million calories!</div> -->

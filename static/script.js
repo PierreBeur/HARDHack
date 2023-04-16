@@ -1,21 +1,16 @@
 const main = document.querySelector('main');
 
 const time = main.querySelector('#time');
-
-function setTime() {
+setInterval(() => {
     const now = new Date();
     const timeString = now.toLocaleTimeString();
     time.textContent = `${timeString}`;
-}
-
-setInterval(setTime, 1000);
+}, 1000);
 
 const stopwatch = main.querySelector('#stopwatch');
 const button = main.querySelector('button');
 const buttonImg = button.querySelector('img');
-
 let startTime, elapsedTime = 0.0, timerInterval;
-
 button.addEventListener('click', async () => {
     if (buttonImg.src.includes('start')) { // start
         buttonImg.src = 'static/reset.png';
@@ -57,10 +52,10 @@ async function setData() {
     const d = json['distance'];
     const t = json['temperature'];
     if (a) {
-        // acceleration.textContent = `Acceleration: (${a.x}, ${a.y}, ${a.z})`;
+        console.log(`Acceleration: (${a.x}, ${a.y}, ${a.z})`)
     }
     if (g) {
-        // gyro.textContent = `Gyro: (${g.x}, ${g.y}, ${g.z})`;
+        console.log(`Gyro: (${g.x}, ${g.y}, ${g.z})`)
     }
     if (s) {
         speed.textContent = Math.round(s);

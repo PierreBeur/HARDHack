@@ -11,18 +11,20 @@ main {
   padding: 1rem;
 }
 
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
 .flex-row {
   display: flex;
-  gap: 1rem;
 }
 
 .flex-column {
   display: flex;
   flex-flow: column;
-}
-
-#buttons {
-  flex-grow: 1;
+  align-items: center;
 }
 
 button {
