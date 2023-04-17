@@ -21,6 +21,7 @@ class MySerialMonitor:
     def __init__(self):
         self.acceleration = {"x": 0.0, "y": 0.0, "z": 0.0}
         self.gyro = {"x": 0.0, "y": 0.0, "z": 0.0}
+        self.velocity = {"x": 0.0, "y": 0.0, "z": 0.0}
         self.speed = 0.0
         self.distance = 0.0
         self.temperature = 0.0
@@ -32,8 +33,13 @@ class MySerialMonitor:
                 data = json.loads(ser.readline().decode().rstrip()) # read the data from the serial port
                 if 'acceleration' in data:
                     self.acceleration = data['acceleration']
-                    magnitude = length(self.acceleration)
-                    self.speed += (magnitude - 9.8) * 0.5
+                    self.acceleration['x'] = 0.0
+                    print(self.acceleration)
+                    self.velocity['x'] += self.acceleration['x'] * 0.5
+                    self.velocity['y'] += self.acceleration['y'] * 0.5
+                    self.velocity['z'] += self.acceleration['z'] * 0.5
+                    self.speed = length(self.velocity)
+                    print(self.distance)
                     self.distance += self.speed * 0.5
                 if 'gyro' in data:
                     self.gyro = data['gyro']
@@ -70,6 +76,7 @@ def get_data():
 
 @app.get("/reset")
 def get_reset():
+    serial_monitor.velocity = 0.0
     serial_monitor.speed = 0.0
     serial_monitor.distance = 0.0
 
