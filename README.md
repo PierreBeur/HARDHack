@@ -12,7 +12,7 @@ Members of our team:
 
 Imagine trying to walk without being able to feel your legs.
 This is a daily struggle for those with physical disabilities or injuries.
-Our project’s goal is to provide a solution to that problem.
+Our project’s goal is to provide a cost-effective tool to assist recovery.
 
 An electromyograph (EMG), is a device which measures the electrical activity of muscles during contraction and relaxation.
 Our amplification circuit boosts the faint signals from the EMG,
